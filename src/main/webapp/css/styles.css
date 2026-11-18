@@ -1,0 +1,67 @@
+body {
+    background-color: #f6f5f2;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.bg-coffee {
+    background-color: #3b2314;
+}
+
+.text-coffee {
+    color: #5c3720;
+}
+
+.bg-coffee-light {
+    background-color: #f3e9e2;
+}
+
+.btn-coffee {
+    background-color: #6f4227;
+    color: #fff;
+    border: none;
+}
+
+.btn-coffee:hover {
+    background-color: #54311c;
+    color: #fff;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #4b2c19 0%, #8c5635 100%);
+}
+
+.product-card {
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
+    border-radius: 14px;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-card.selected {
+    outline: 3px solid #6f4227;
+    background-color: #fffaf5;
+}
+
+.icon-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #f3e9e2;
+    color: #6f4227;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pedido-item {
+    border-left: 5px solid #6f4227;
+    transition: background-color 0.2s ease;
+}
+
+.pedido-item:hover {
+    background-color: #fafafa;
+}
