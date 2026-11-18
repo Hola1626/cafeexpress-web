@@ -42,14 +42,13 @@ async function cargarDatos() {
         const res = await fetch('api/pedidos');
         const data = await res.json();
 
-        // Actualizar variables de entorno
         document.getElementById('env-app').textContent = data.config.appEnv;
         document.getElementById('env-url').textContent = data.config.dbUrl;
         document.getElementById('env-user').textContent = data.config.dbUser;
         document.getElementById('env-pass').textContent = data.config.dbPass;
         document.getElementById('java-version').textContent = 'Java ' + data.config.javaVersion;
-        document.getElementById('badge-env').innerHTML = `<i class="bi bi-cloud-check"></i> ${data.config.appEnv}`;
-        document.getElementById('badge-port').innerHTML = `<i class="bi bi-hdd-network"></i> Puerto ${data.config.port}`;
+        document.getElementById('badge-env').textContent = `☁️ ${data.config.appEnv}`;
+        document.getElementById('badge-port').textContent = `🟢 Puerto ${data.config.port}`;
 
         pedidosCache = data.pedidos || [];
         renderizarPedidos();
@@ -93,15 +92,15 @@ function renderizarPedidos() {
                         <span class="badge ${badgeColor}">${p.estado}</span>
                     </div>
                     <div class="small text-muted">
-                        <i class="bi bi-person"></i> ${p.cliente} · <i class="bi bi-clock"></i> ${p.hora} · <strong>S/ ${Number(p.precio).toFixed(2)}</strong>
+                        👤 ${p.cliente} · 🕒 ${p.hora} · <strong>S/ ${Number(p.precio).toFixed(2)}</strong>
                     </div>
                 </div>
                 <div class="d-flex gap-1">
-                    <button class="btn btn-sm btn-outline-success" title="Cambiar estado" onclick="cambiarEstado(${p.id})">
-                        <i class="bi bi-check2-circle"></i>
+                    <button class="btn btn-sm btn-outline-success fw-bold" title="Cambiar estado" onclick="cambiarEstado(${p.id})">
+                        ✓
                     </button>
                     <button class="btn btn-sm btn-outline-danger" title="Eliminar" onclick="eliminarPedido(${p.id})">
-                        <i class="bi bi-trash"></i>
+                        🗑️
                     </button>
                 </div>
             </div>
